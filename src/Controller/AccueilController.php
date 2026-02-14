@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Description of AccueilController
- *
+ * BTS SIO
  * @author emds
  */
 class AccueilController extends AbstractController{
