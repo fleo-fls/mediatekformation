@@ -9,7 +9,10 @@
                 {% for playlist in playlistcategories %}
                     {{ playlist.name }}&nbsp;
                 {% endfor %}
-            <br /><br />
+            <br />
+            <strong>nombre de formations:</strong>
+            {{ playlist.formations|length }}&nbsp;
+            <br />
             <strong>description :</strong><br />
                 {{ playlist.description|nl2br }}
         </div>
@@ -20,7 +23,7 @@
                     <div class="col-md-auto">
                         {% if formation.miniature %}
                             <a href="{{ path('formations.showone', {id:formation.id}) }}">
-                                <img src="{{ formation.miniature }}">
+                                <img src="{{ formation.miniature }}" alt="formation_mini">
                             </a>
                         {% endif %}  
                     </div>

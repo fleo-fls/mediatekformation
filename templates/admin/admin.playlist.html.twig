@@ -1,6 +1,14 @@
-{% extends "basefront.html.twig" %}
+{% extends "baseadmin.html.twig" %}
 {% block body %}
     <table class="table table-striped">
+         <div class="col">
+            <h2>Gestion des playlists</h2>
+        </div>
+        <div class="col text-end">
+            <a href="{{ path('admin.playlists.add') }}" class="btn btn-primary">
+                Ajouter une playlist
+            </a>
+        </div>
         <thead>
             <tr>
                 <th class="text-left align-top" scope="col">
@@ -53,17 +61,34 @@
                             </h5>
                         </td>                 
                         <td class="text-left">
-                            {% set categories = playlists[k].categoriesplaylist %}
+                            {% set playlistCategories = playlists[k].categoriesplaylist %}
                             {% if categories|length > 0  %}
                                 {% for c in 0..categories|length-1 %}
-                                    &nbsp;{{ categories[c] }}                                  
+                                    &nbsp;{{ categories[c].name }}                                  
                                 {% endfor %}
                             {% endif %}
                         </td>
                         <td>{{ playlists[k].formations|length }}</td>
                         <td class="text-center">
-                            <a href="{{ path('playlists.showone', {id:playlists[k].id}) }}" class="btn btn-secondary">Voir détail</a>
-                        </td> 					
+                        playlist.html.twig
+                    <td class="text-center">
+                        <div class="d-grid gap-2 d-md-block">
+                            <a href="{{ path('admin.playlists.edit',{id: playlists[k].id}) }}" 
+                            class="btn btn-secondary btn-sm" style="min-width: 80px;">modifier</a>
+
+                            {% if playlists[k].formations|length == 0 %}
+                                <form method="post" action="{{ path('admin.playlists.remove', {id: playlists[k].id}) }}" style="display:inline;">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete_playlist_' ~ playlists[k].id) }}">
+                                    <button class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Etes-vous sûr de vouloir supprimer cette playlist ?'),">Supprimer
+                                    </button>
+                                </form>
+                            {% else %}
+                                <button class="btn btn-danger btn-sm" 
+                                        disabled title="Suppression impossible : des formations sont rattachées">Supprimer</button>
+                            {% endif %}
+                        </div>
+                    </td>				
                     </tr>
                 {% endfor %}	
             {% endif %}

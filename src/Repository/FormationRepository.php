@@ -27,7 +27,6 @@ class FormationRepository extends ServiceEntityRepository
         $this->getEntityManager()->remove($entity);
         $this->getEntityManager()->flush();
     }
-
     /**
      * Retourne toutes les formations triées sur un champ
      * @param type $champ
@@ -49,7 +48,6 @@ class FormationRepository extends ServiceEntityRepository
                     ->getResult();            
         }
     }
-
     /**
      * Enregistrements dont un champ contient une valeur
      * ou tous les enregistrements si la valeur est vide
@@ -78,8 +76,7 @@ class FormationRepository extends ServiceEntityRepository
                     ->getQuery()
                     ->getResult();                   
         }       
-    }    
-    
+    }      
     /**
      * Retourne les n formations les plus récentes
      * @param type $nb
@@ -91,8 +88,7 @@ class FormationRepository extends ServiceEntityRepository
                 ->setMaxResults($nb)     
                 ->getQuery()
                 ->getResult();
-    }    
-    
+    }     
     /**
      * Retourne la liste des formations d'une playlist
      * @param type $idPlaylist
@@ -106,6 +102,5 @@ class FormationRepository extends ServiceEntityRepository
                 ->orderBy('f.publishedAt', 'ASC')   
                 ->getQuery()
                 ->getResult();        
-    }
-    
+    }  
 }

@@ -1,0 +1,51 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h3>Ajouter une catégorie</h3>
+        {{ form_start(form) }}
+            <div class="row align-items-end">
+                <div class="col-md-4">
+                    {{ form_row(form.name) }} 
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary mb-3">Ajouter</button>
+                </div>
+            </div>
+        {{ form_end(form) }}
+
+        <hr>
+
+        <h3>Liste des catégories</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Nombre de formations</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in categories %}
+                    <tr>
+                        <td>{{ c.name }}</td> 
+                        <td>{{ c.formations|length }}</td>
+                        <td>
+                            {% if c.formations|length == 0 %}
+                                <a href="{{ path('admin.categorie.supprimer', {id: c.id}) }}" 
+                                   class="btn btn-danger btn-sm" 
+                                   onclick="return confirm('Supprimer cette catégorie ?')">
+                                   Supprimer
+                                </a>
+                            {% else %}
+                                <button class="btn btn-secondary btn-sm" disabled title="Catégorie liée à des formations">
+                                    Supprimer
+                                </button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
