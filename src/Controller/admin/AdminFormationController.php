@@ -97,6 +97,12 @@ class AdminFormationController extends AbstractController {
             'isEdition' => $formation->getId() !== null
         ]);
     }
+    /**
+     * 
+     * @param EntityManagerInterface $em
+     * @param UserPasswordHasherInterface $passwordHasher
+     * @return Response
+     */
     #[Route('/setup-admin', name: 'setup_admin')]
     public function setupAdmin(EntityManagerInterface $em, UserPasswordHasherInterface $passwordHasher): Response
     {

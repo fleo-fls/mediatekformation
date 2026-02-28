@@ -17,7 +17,7 @@ class CategorieType extends AbstractType
             ->add('name')
             ->add('formations', EntityType::class, [
                 'class' => Formation::class,
-                'choice_label' => 'id',
+                'choice_label' => 'title',
                 'multiple' => true,
             ])
         ;

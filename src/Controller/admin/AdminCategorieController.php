@@ -13,6 +13,13 @@ use App\Form\CategorieType;
 
 class AdminCategorieController extends AbstractController {
     
+    /**
+     * 
+     * @param Request $request
+     * @param CategorieRepository $repo
+     * @param EntityManagerInterface $em
+     * @return Response
+     */
     #[Route('/admin/categorie', name: 'admin.categorie')]
     public function index(Request $request, CategorieRepository $repo, EntityManagerInterface $em): Response
     {
@@ -32,7 +39,12 @@ class AdminCategorieController extends AbstractController {
         'form' => $form->createView(),
     ]);
     }
-
+    /**
+     * 
+     * @param Categorie $categorie
+     * @param EntityManagerInterface $em
+     * @return Response
+     */
     #[Route('/admin/categorie/supprimer/{id}', name: 'admin.categorie.supprimer')]
     public function delete(Categorie $categorie, EntityManagerInterface $em): Response
     {
