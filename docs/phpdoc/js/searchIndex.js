@@ -131,6 +131,16 @@ Search.appendIndex(
             "summary": "Modification\u0020de\u0020playlist",
             "url": "classes/App-Controller-admin-AdminPlaylistController.html#method_edit"
         },                {
+            "fqsen": "\\App\\Controller\\admin\\AdminPlaylistController\u003A\u003Asort\u0028\u0029",
+            "name": "sort",
+            "summary": "",
+            "url": "classes/App-Controller-admin-AdminPlaylistController.html#method_sort"
+        },                {
+            "fqsen": "\\App\\Controller\\admin\\AdminPlaylistController\u003A\u003AfindAllContain\u0028\u0029",
+            "name": "findAllContain",
+            "summary": "",
+            "url": "classes/App-Controller-admin-AdminPlaylistController.html#method_findAllContain"
+        },                {
             "fqsen": "\\App\\Controller\\admin\\AdminPlaylistController\u003A\u003A\u0024playlistRepository",
             "name": "playlistRepository",
             "summary": "",
