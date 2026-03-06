@@ -1,6 +1,21 @@
-- name: Déploiement SFTP
-  uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-  with:
+name: Deploy to IONOS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      - name: Déploiement SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
           server: ${{ secrets.SFTP_SERVER }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
