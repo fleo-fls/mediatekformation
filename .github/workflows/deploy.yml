@@ -18,3 +18,5 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           server-dir: /mediatekformation/public/
+          protocol: sftp 
+          port: 22
