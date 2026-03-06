@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
           local_path: ./*
-          remote_path: /mediatekformation/public/
+          remote_path: mediatekformation/public/
