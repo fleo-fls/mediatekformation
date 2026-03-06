@@ -17,4 +17,4 @@ jobs:
           server: ${{ secrets.SFTP_SERVER }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          server-dir: /mediatekformation/public
+          server-dir: /mediatekformation/public/
