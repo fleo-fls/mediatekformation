@@ -1,17 +1,19 @@
-# Mediatekformation
+# Mediatekformation - Extension Back-Office
 ## Présentation
-Ce site, développé avec Symfony 6.4, permet d'accéder aux vidéos d'auto-formation proposées par une chaîne de médiathèques et qui sont aussi accessibles sur YouTube.<br> 
-Actuellement, seule la partie front office a été développée. Elle contient les fonctionnalités globales suivantes :<br>
-![img1](https://github.com/user-attachments/assets/9c5c503b-738d-40cf-ba53-36ba4c0209e8)
-## Les différentes pages
-Voici les 5 pages correspondant aux différents cas d’utilisation.
-### Page 1 : l'accueil
-Cette page présente le fonctionnement du site et les 2 dernières vidéos mises en ligne.<br>
-La partie du haut contient une bannière (logo, nom et phrase présentant le but du site) et le menu permettant d'accéder aux 3 pages principales (Accueil, Formations, Playlists).<br>
-Le centre contient un texte de présentation avec, entre autres, les liens pour accéder aux 2 autres pages principales.<br>
-La partie basse contient les 2 dernières formations mises en ligne. Cliquer sur une image permet d'accéder à la page 3 de présentation de la formation.<br>
-Le bas de page contient un lien pour accéder à la page des CGU : ce lien est présent en bas de chaque page excepté la page des CGU.<br>
-![img2](https://github.com/user-attachments/assets/523b4233-3505-4b8c-9db0-5e7b72965bc6)
+Ce dépôt est une extension du projet initial Mediatekformation.<br> Il conserve les fonctionnalités de consultation pour le public tout en ajoutant une interface d'administration sécurisée pour la gestion du catalogue.<br>
+Dépôt d'origine : Vous pouvez retrouver le projet initial et sa présentation complète ici :
+https://github.com/CNED-SLAM/mediatekformation
+## Fonctionnalités Ajoutées (Back-Office)
+Ajout d'une partie Admin, permettant aux gestionnaires de la médiathèque de mettre à jour le contenu sans passer par la base de données.<br>
+Tapez /admin dans l'url pour accéder au formulaire d'identification.<br>
+<img width="2771" height="462" alt="Capture d&#39;écran 2026-03-10 220859" src="https://github.com/user-attachments/assets/5bae72e7-5856-4f2a-b232-0c26d8bbdb52" />
+### 1. Gestion des Formations
+Une nouvelle interface permet de lister toutes les formations avec des options de modification et de suppression.<br>
+<img width="2691" height="1531" alt="Capture d&#39;écran 2026-03-10 221339" src="https://github.com/user-attachments/assets/d223997e-a8e9-4e1f-9328-76f024232e13" />
+
+Ajout/Modification : Formulaire complet pour éditer le titre, la description, la vidéo YouTube (via son ID) et la playlist associée.<br>
+Suppression : Possibilité de retirer une formation obsolète du catalogue.<br>
+
 ### Page 2 : les formations
 Cette page présente les formations proposées en ligne (accessibles sur YouTube).<br>
 La partie haute est identique à la page d'accueil (bannière et menu).<br>
